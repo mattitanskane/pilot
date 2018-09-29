@@ -122,9 +122,9 @@ add_action( 'widgets_init', 'sanapainomasa_widgets_init' );
 function sanapainomasa_scripts() {
 	wp_enqueue_style( 'sanapainomasa-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'sanapainomasa-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'sanapainomasa-vendorjs', get_template_directory_uri() . '/assets/js/vendor.min.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'sanapainomasa-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'sanapainomasa-customjs', get_template_directory_uri() . '/assets/js/custom.min.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
