@@ -8,33 +8,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package sanapainomasa
+ * @package pilot
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses sanapainomasa_header_style()
+ * @uses pilot_header_style()
  */
-function sanapainomasa_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'sanapainomasa_custom_header_args', array(
+function pilot_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'pilot_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'sanapainomasa_header_style',
+		'wp-head-callback'       => 'pilot_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'sanapainomasa_custom_header_setup' );
+add_action( 'after_setup_theme', 'pilot_custom_header_setup' );
 
-if ( ! function_exists( 'sanapainomasa_header_style' ) ) :
+if ( ! function_exists( 'pilot_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see sanapainomasa_custom_header_setup().
+	 * @see pilot_custom_header_setup().
 	 */
-	function sanapainomasa_header_style() {
+	function pilot_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

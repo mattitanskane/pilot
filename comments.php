@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package sanapainomasa
+ * @package pilot
  */
 
 /*
@@ -28,18 +28,18 @@ if ( post_password_required() ) {
 		?>
 		<h2 class="comments-title">
 			<?php
-			$sanapainomasa_comment_count = get_comments_number();
-			if ( '1' === $sanapainomasa_comment_count ) {
+			$pilot_comment_count = get_comments_number();
+			if ( '1' === $pilot_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'sanapainomasa' ),
+					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'pilot' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $sanapainomasa_comment_count, 'comments title', 'sanapainomasa' ) ),
-					number_format_i18n( $sanapainomasa_comment_count ),
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $pilot_comment_count, 'comments title', 'pilot' ) ),
+					number_format_i18n( $pilot_comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			}
@@ -63,7 +63,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'sanapainomasa' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'pilot' ); ?></p>
 			<?php
 		endif;
 
