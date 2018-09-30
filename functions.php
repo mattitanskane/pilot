@@ -24,7 +24,7 @@ if ( ! function_exists( 'pilot_setup' ) ) :
 		 */
 		load_theme_textdomain( 'pilot', get_template_directory() . '/languages' );
 
-		// Add default posts and comments RSS feed links to head.
+		// Add default posts RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
 		/*
@@ -48,13 +48,11 @@ if ( ! function_exists( 'pilot_setup' ) ) :
 		) );
 
 		/*
-		 * Switch default core markup for search form, comment form, and comments
+		 * Switch default core markup for search form and comment form.
 		 * to output valid HTML5.
 		 */
 		add_theme_support( 'html5', array(
 			'search-form',
-			'comment-form',
-			'comment-list',
 			'gallery',
 			'caption',
 		) );
@@ -126,28 +124,30 @@ function pilot_scripts() {
 
 	wp_enqueue_script( 'pilot-customjs', get_template_directory_uri() . '/assets/js/custom.min.js', array(), '20151215', true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'pilot_scripts' );
 
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/includes/custom-header.php';
 
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/includes/template-tags.php';
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
-require get_template_directory() . '/inc/template-functions.php';
+require get_template_directory() . '/includes/template-functions.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/includes/customizer.php';
+
+/**
+ * Disable comments
+ */
+require get_template_directory() . '/includes/disable-comments.php';
